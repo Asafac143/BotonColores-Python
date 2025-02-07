@@ -1,0 +1,59 @@
+from tkinter import *
+ventana = Tk()
+ventana.title("Colores")
+ventana.geometry("1000x230")
+ventana.resizable(False,False)
+ventana.configure(background="white")
+
+def reset():
+    pantalla.delete(0,END)
+
+def pulsar(valor):
+    pantalla.delete(0,END)
+    pantalla.insert(0,str(valor))
+    if str(valor) == "rojo #FF0000":
+        pantalla["bg"]="red"
+    if str(valor) == "naranja #FF8C00":
+        pantalla["bg"]="orange"
+    if str(valor) == "amarillo #FFFF00":
+        pantalla["bg"]="yellow"
+    if str(valor) == "verde #008000":
+        pantalla["bg"]="green"
+    if str(valor) == "azul claro #87CEEB":
+        pantalla["bg"]="sky blue"
+    if str(valor) == "azul #0000FF":
+        pantalla["bg"]="blue"
+    if str(valor) == "azul oscuro #00008B":
+        pantalla["bg"]="dark blue"
+    if str(valor) == "morado #800080":
+        pantalla["bg"]="purple"
+    if str(valor) == "rosa #FF0CB":
+        pantalla["bg"]="pink"
+        
+pantalla = Entry(ventana,font=("Monotype Corsiva",30),borderwidth=5)
+pantalla.place(x=300,y=10)
+boton_reset = Button(ventana,text="reset",bg="white",font=("Freestyle Script",18),fg="black",borderwidth=5.,command=reset)
+boton_reset.place(x=670,y=10)
+
+ancho=15
+alto=3
+
+#Botones
+rojo = Button(ventana,bg="red",width=ancho,height=alto,command=lambda:pulsar("rojo #FF0000"))
+rojo.place(x=30,y=100)
+naranja = Button(ventana,bg="orange",width=ancho,height=alto,command=lambda:pulsar("naranja #FF8C00"))
+naranja.place(x=130,y=100)
+amarillo = Button(ventana,bg="yellow",width=ancho,height=alto,command=lambda:pulsar("amarillo #FFFF00"))
+amarillo.place(x=230,y=100)
+verde = Button(ventana,bg="green",width=ancho,height=alto,command=lambda:pulsar("verde #008000"))
+verde.place(x=330,y=100)
+azul_claro = Button(ventana,bg="sky blue",width=ancho,height=alto,command=lambda:pulsar("azul claro #87CEEB"))
+azul_claro.place(x=430,y=100)
+azul = Button(ventana,bg="blue",width=ancho,height=alto,command=lambda:pulsar("azul #0000FF"))
+azul.place(x=530,y=100)
+azul_oscuro = Button(ventana,bg="dark blue",width=ancho,height=alto,command=lambda:pulsar("azul oscuro #00008B"))
+azul_oscuro.place(x=630,y=100)
+morado = Button(ventana,bg="purple",width=ancho,height=alto,command=lambda:pulsar("morado #800080"))
+morado.place(x=730,y=100)
+rosa = Button(ventana,bg="pink",width=ancho,height=alto,command=lambda:pulsar("rosa #FF0CB"))
+rosa.place(x=830,y=100)
